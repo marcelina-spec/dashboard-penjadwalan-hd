@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Penjadwalan Hemodialisis</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div>
+            <h1>Dashboard Penjadwalan Hemodialisis</h1>
+            <p>Unit Hemodialisis • Data Sintetis</p>
+        </div>
+
+        <div id="tanggal"></div>
+    </header>
+
+
+    <main>
+
+        <!-- RINGKASAN -->
+        <section class="summary">
+
+            <div class="card">
+                <h3>Total Pasien</h3>
+                <p id="totalPasien">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Selesai</h3>
+                <p id="selesai">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Berlangsung</h3>
+                <p id="berlangsung">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Menunggu</h3>
+                <p id="menunggu">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Terlambat</h3>
+                <p id="terlambat">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Batal</h3>
+                <p id="batal">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- PERINGATAN -->
+        <section class="warning" id="warning">
+            <h2>⚠ Peringatan</h2>
+            <p id="warningText"></p>
+        </section>
+
+
+        <!-- JADWAL -->
+        <section class="panel">
+
+            <div class="judul">
+                <h2>Jadwal Hemodialisis</h2>
+            </div>
+
+
+            <!-- FILTER -->
+            <div class="filter">
+
+                <label>
+                    Sesi:
+                    <select id="filterSesi">
+                        <option value="Semua">Semua</option>
+                        <option value="Pagi">Pagi</option>
+                        <option value="Siang">Siang</option>
+                    </select>
+                </label>
+
+
+                <label>
+                    Status:
+                    <select id="filterStatus">
+                        <option value="Semua">Semua</option>
+                        <option value="Menunggu">Menunggu</option>
+                        <option value="Berlangsung">Berlangsung</option>
+                        <option value="Selesai">Selesai</option>
+                        <option value="Terlambat">Terlambat</option>
+                        <option value="Batal">Batal</option>
+                    </select>
+                </label>
+
+
+                <label>
+                    Mesin:
+                    <select id="filterMesin">
+                        <option value="Semua">Semua</option>
+                    </select>
+                </label>
+
+            </div>
+
+
+            <!-- TABEL -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>No</th>
+                            <th>Kode Pasien</th>
+                            <th>Sesi</th>
+                            <th>Mesin HD</th>
+                            <th>Jam Mulai</th>
+                            <th>Estimasi Selesai</th>
+                            <th>Status</th>
+                            <th>Catatan</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tabelJadwal">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATUS MESIN -->
+        <section class="panel">
+
+            <h2>Status Mesin HD</h2>
+
+            <div id="daftarMesin" class="mesin-container"></div>
+
+        </section>
+
+
+        <!-- ANALISIS -->
+        <section class="panel">
+
+            <h2>Analisis Manfaat dan Risiko</h2>
+
+            <h3>Manfaat</h3>
+
+            <p>
+                Dashboard membantu petugas melihat jadwal pasien,
+                sesi pelayanan, mesin HD, jam pelayanan, dan status
+                pelayanan secara cepat sehingga koordinasi pelayanan
+                hemodialisis menjadi lebih mudah.
+            </p>
+
+
+            <h3>Risiko</h3>
+
+            <p>
+                Risiko penggunaan dashboard antara lain salah jadwal,
+                salah pasien, jadwal ganda, mesin maintenance tidak
+                terlihat, downtime, serta adanya tambahan beban input.
+            </p>
+
+
+            <h3>Mitigasi</h3>
+
+            <p>
+                Risiko dapat dikurangi dengan melakukan validasi jadwal,
+                menggunakan indikator status, memberikan peringatan
+                otomatis, melakukan pemeriksaan ulang, serta menggunakan
+                data sintetis.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Prototype Praktikum Pertemuan 7 -
+            Penggunaan Teknologi dalam Manajemen Kesehatan Ginjal
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
